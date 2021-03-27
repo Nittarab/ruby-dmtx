@@ -53,3 +53,36 @@ request a particular size of the output `SizeRequest`.
     rdmtx.decode(Image, Timeout)
 
 Decodes the rmagick image object `Image` within `Timeout`.
+
+
+Development Environment
+=======================
+
+### Dependencies
+
+```
+sudo apt install software-properties-common
+sudo apt-add-repository -y ppa:rael-gc/rvm
+sudo apt update
+sudo apt install rvm
+sudo apt install libmagickwand-dev libdmtx-dev
+rvm install 2.7
+```
+
+### Build gem
+```
+rvm use 2.7@ruby-dmtx
+gem build Rdmtx.gemspec
+```
+
+### Install and test local gem
+```
+gem install ./Rdmtx-0.4.0.gem
+./test.rb
+./test.rb output.png
+```
+
+### Upload to rubygems
+```
+gem push Rdmtx-0.4.0.gem
+```
